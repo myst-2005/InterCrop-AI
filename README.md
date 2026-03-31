@@ -1,70 +1,79 @@
-
-
 # 🌱 InterCrop AI
+
+---
 
 ## 🌾 What is Intercropping?
 
 **Intercropping** is a farming technique where multiple crops are grown on the same piece of land in a planned way.
 
 Instead of planting just one crop, farmers divide their land and grow different crops together to:
+
 - Increase total yield  
 - Reduce risk  
 - Improve soil health  
 - Use resources (water, nutrients) more efficiently  
 
-👉 Example:
+👉 **Example:**
 - 50% land → Rice  
 - 30% land → Vegetables  
 - 20% land → Legumes  
 
 ---
-##Web Link
-https://intercrop-ai-346587938099.us-west1.run.app/
 
- 
-##Drive Link
-https://drive.google.com/drive/folders/1J_azBM7LQ4e6YqG8vEyYawwe4kKk8WIh
+## 🔗 Live Links
 
-## 🚀 What This Project Does
+- 🌐 **Web App:** https://intercrop-ai-346587938099.us-west1.run.app/  
+- 📂 **Google Drive:** https://drive.google.com/drive/folders/1J_azBM7LQ4e6YqG8vEyYawwe4kKk8WIh  
 
-InterCrop AI takes intercropping to the next level using data and AI.
+---
+
+## 🚀 Project Name
+
+**InterCrop AI**
+
+---
+
+## ❗ Problem Statement
+
+Farmers often rely on experience, guesswork, and traditional practices to decide which crops to grow together.
+
+This leads to:
+- Poor crop combinations  
+- Inefficient land usage  
+- Low profitability  
+- High climate and market risks  
+
+There is a lack of **data-driven decision support systems** for intercropping.
+
+---
+
+## 📘 Project Description
+
+**InterCrop AI** is an intelligent system that optimizes intercropping strategies using data and AI.
 
 It analyzes:
-
 - 🌱 Soil conditions  
 - 🌦 Weather patterns  
 - 📊 Market demand  
 
 And generates:
-
 - ✅ Smart crop recommendations  
 - ✅ Land allocation (%)  
 - ✅ Profit estimation  
 - ✅ Risk analysis  
 
----
+### 💡 Why This Works
 
-## 💡 Why This Works
-
-Traditional intercropping is based on:
-- Experience  
+Traditional intercropping depends on:
 - Trial and error  
 - Local knowledge  
 
-This can lead to:
-- Poor crop combinations  
-- Low profits  
-- Market mismatch  
-
-### ✅ Our Approach
-
-We combine **3 powerful data layers**:
-
-- **Soil Intelligence** → Ensures crops match land conditions  
+Our solution combines:
+- **Soil Intelligence** → Matches crops to land  
 - **Weather Intelligence** → Reduces climate risks  
-- **Market Intelligence** → Focuses on profitable crops  
+- **Market Intelligence** → Maximizes profit  
 
-👉 This transforms farming from **guesswork → data-driven decisions**
+👉 Transforming farming from **guesswork → data-driven decisions**
 
 ---
 
@@ -80,12 +89,44 @@ We combine **3 powerful data layers**:
 ---
 
 ### 2. Data Collection
-- Weather API  
-- Market price data  
+- Weather APIs  
+- Market price datasets  
 - Crop database  
 
 ---
 
 ### 3. AI Processing
 
-Each crop is scored:
+Each crop is evaluated based on:
+- Soil compatibility  
+- Weather suitability  
+- Market profitability  
+- Risk level  
+
+👉 The system ranks crops and generates:
+- Optimal combinations  
+- Land distribution  
+- Expected returns  
+
+---
+
+## 🤖 Google AI Usage
+
+### 🧰 Tools / Models Used
+- Google AI / Gemini (Gemini)
+- Google Cloud APIs (Gmaps)
+
+---
+
+### ⚡ How Google AI Was Used
+
+- Analyze user input (soil, weather, land size)  
+- Generate intelligent crop recommendations  
+- Predict profitability and risks  
+- Assist in decision-making using AI reasoning  
+
+---
+
+### 📸 Proof of Google AI Usage
+
+Add screenshots inside `/proof` folder:
