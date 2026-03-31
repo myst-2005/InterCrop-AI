@@ -129,4 +129,4 @@ Each crop is evaluated based on:
 
 ### 📸 Proof of Google AI Usage
 
-Add screenshots inside `/proof` folder:
+https://drive.google.com/drive/folders/1J_azBM7LQ4e6YqG8vEyYawwe4kKk8WIh
