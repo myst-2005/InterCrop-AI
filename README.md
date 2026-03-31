@@ -18,6 +18,12 @@ Instead of planting just one crop, farmers divide their land and grow different 
 - 20% land → Legumes  
 
 ---
+##Web Link
+https://intercrop-ai-346587938099.us-west1.run.app/
+
+ 
+##Drive Link
+https://drive.google.com/drive/folders/1J_azBM7LQ4e6YqG8vEyYawwe4kKk8WIh
 
 ## 🚀 What This Project Does
 
