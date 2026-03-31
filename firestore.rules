@@ -1,0 +1,80 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: plans
+    // Document ID: auto-generated
+    // Fields:
+    //   - userId: string (required) - The UID of the user who created the plan.
+    //   - landSize: number (required) - Land size in acres.
+    //   - location: string (required) - Location coordinates or city name.
+    //   - soilType: string (required) - Type of soil.
+    //   - pH: number (optional) - Soil pH level.
+    //   - waterAvailability: string (required) - Water availability level (Low/Medium/High).
+    //   - riskPreference: string (required) - User's risk preference (Low/Medium/High).
+    //   - recommendation: map (required) - The AI generated recommendation.
+    //   - createdAt: timestamp (required) - When the plan was created.
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isDocOwner() {
+      return isAuthenticated() && request.auth.uid == resource.data.userId;
+    }
+
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    function isValidPlan(data) {
+      let allowedFields = ['userId', 'landSize', 'location', 'soilType', 'pH', 'waterAvailability', 'riskPreference', 'recommendation', 'createdAt', 'droneView'];
+      let requiredFields = ['userId', 'landSize', 'location', 'soilType', 'waterAvailability', 'riskPreference', 'recommendation', 'createdAt'];
+      
+      return hasRequiredFields(requiredFields) &&
+             hasOnlyAllowedFields(allowedFields) &&
+             data.userId is string && data.userId == request.auth.uid &&
+             data.landSize is number && data.landSize > 0 &&
+             data.location is string && data.location.size() > 0 && data.location.size() < 200 &&
+             data.soilType is string &&
+             (!('pH' in data) || (data.pH is number && data.pH >= 0 && data.pH <= 14)) &&
+             (!('droneView' in data) || (data.droneView is string && data.droneView.size() < 1048576)) &&
+             data.waterAvailability in ['Low', 'Medium', 'High'] &&
+             data.riskPreference in ['Low', 'Medium', 'High'] &&
+             data.recommendation is map &&
+             data.createdAt is timestamp;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /plans/{planId} {
+      allow read: if isDocOwner();
+      allow create: if isAuthenticated() && isValidPlan(request.resource.data);
+      allow update, delete: if false; // Plans are immutable for now
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

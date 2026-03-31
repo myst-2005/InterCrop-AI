@@ -1,0 +1,5 @@
+{
+  "name": "InterCrop AI",
+  "description": "Intelligent farming assistant for crop allocation, land split, and profit estimation using AI.",
+  "requestFramePermissions": ["geolocation"]
+}
